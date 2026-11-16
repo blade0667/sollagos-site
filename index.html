@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sollagos Energia Solar | Região dos Lagos e Rio de Janeiro</title>
+<meta name="description" content="Energia solar para casas, empresas, indústrias e fazendas na Região dos Lagos. Economia de até 95% na conta de luz, financiamento em até 120x e primeira parcela em 180 dias.">
+<meta name="theme-color" content="#0d2a5c">
+<link rel="icon" href="public/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="Sollagos Energia Solar"><img src="public/img/logo.png" alt="Sollagos"></a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="#servicos">Serviços</a>
+    <a href="#como">Como funciona</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#faq">Dúvidas</a>
+  </nav>
+  <a class="btn btn--sm" href="#orcamento">Orçamento grátis</a>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg" data-parallax><img src="public/img/hero.jpg" alt=""></div>
+  <div class="hero__shade"></div>
+  <div class="sun" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow" data-hero>Energia Solar · Região dos Lagos</p>
+      <h1 data-split>Gere sua própria energia e <em>economize até 95%</em> na conta de luz.</h1>
+      <p class="lead" data-hero>Uma solução completa e personalizada para sua casa, empresa ou fazenda — do projeto à homologação.</p>
+      <div class="hero__cta" data-hero>
+        <a class="btn" href="#orcamento">Quero economizar</a>
+        <a class="btn btn--ghost" href="#resultados">Ver resultados reais</a>
+      </div>
+      <ul class="hero__proof" data-hero>
+        <li><b data-count="600">0</b>+ projetos homologados</li>
+        <li><b data-count="5000">0</b>+ módulos instalados</li>
+      </ul>
+    </div>
+
+    <form class="card form" id="orcamento" data-hero-card novalidate>
+      <h2>Quanto você vai economizar?</h2>
+      <p>Preencha e receba uma simulação dos nossos especialistas.</p>
+      <label>Nome<input name="nome" autocomplete="name" placeholder="Seu nome completo" required></label>
+      <label>E-mail<input name="email" type="email" autocomplete="email" placeholder="seu@email.com" required></label>
+      <label>Telefone<input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required></label>
+      <label>Consumo médio mensal
+        <select name="consumo" required>
+          <option value="">Selecione</option>
+          <option>R$ 400 a R$ 600</option>
+          <option>R$ 600 a R$ 800</option>
+          <option>R$ 800 a R$ 1.000</option>
+          <option>Acima de R$ 1.000</option>
+        </select>
+      </label>
+      <button class="btn btn--block" type="submit">Enviar pelo WhatsApp</button>
+      <p class="form__msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <a class="scrollcue" href="#servicos" aria-label="Rolar"><span></span></a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Economia de até 95%</span><span>Primeira parcela em 180 dias</span><span>Financiamento em até 120x</span><span>Homologação inclusa</span><span>25 anos de vida útil</span>
+    <span>Economia de até 95%</span><span>Primeira parcela em 180 dias</span><span>Financiamento em até 120x</span><span>Homologação inclusa</span><span>25 anos de vida útil</span>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+<section class="sec" id="servicos">
+  <div class="wrap">
+    <header class="sec__head" data-reveal>
+      <p class="eyebrow eyebrow--dark">Segmentos</p>
+      <h2>Energia solar sob medida para cada realidade</h2>
+    </header>
+    <div class="cards4" data-stagger>
+      <article class="tile">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 24 24 8l18 16M10 22v20h28V22M20 42V30h8v12"/></svg>
+        <h3>Residências</h3>
+        <p>Energia solar para casas e condomínios: limpa, sustentável e econômica.</p>
+      </article>
+      <article class="tile">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 42V8h20v34M28 18h12v24M14 14h8M14 22h8M14 30h8M4 42h40"/></svg>
+        <h3>Empresas</h3>
+        <p>Reduza os custos fixos com energia e abra novas possibilidades de investimento.</p>
+      </article>
+      <article class="tile">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 42V22l12 8V22l12 8V22l12 8V8h4v34zM10 38h4M20 38h4M30 38h4"/></svg>
+        <h3>Indústrias</h3>
+        <p>Alimente operações e processos reduzindo custos de energia e emissões de carbono.</p>
+      </article>
+      <article class="tile">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 42V20M24 28c-8 0-12-5-12-12 8 0 12 5 12 12zM24 22c0-7 4-12 12-12 0 7-4 12-12 12zM8 42h32"/></svg>
+        <h3>Agronegócio</h3>
+        <p>Irrigação, iluminação e demais necessidades de fazendas e propriedades rurais.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="sec sec--blue benefits">
+  <div class="wrap benefits__grid">
+    <div data-reveal>
+      <p class="eyebrow">Por que energia solar?</p>
+      <h2>Um investimento que se paga e continua rendendo por décadas.</h2>
+      <p class="lead">Pagamento facilitado: comece a pagar daqui a 180 dias, com financiamento em até 120 meses ou 48x no cartão.</p>
+      <a class="btn" href="#orcamento">Solicitar orçamento gratuito</a>
+    </div>
+    <ul class="checks" data-stagger>
+      <li><b>Até 95%</b> de economia na conta de energia</li>
+      <li><b>Valorização</b> do seu imóvel</li>
+      <li><b>Independência</b> da rede elétrica</li>
+      <li><b>Fonte renovável</b> que preserva o meio ambiente</li>
+      <li><b>Baixa manutenção</b> e vida útil longa</li>
+      <li><b>Instalação rápida</b> com equipe qualificada</li>
+    </ul>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sec" id="como">
+  <div class="wrap">
+    <header class="sec__head" data-reveal>
+      <p class="eyebrow eyebrow--dark">Passo a passo</p>
+      <h2>Simples e rápido para começar a economizar</h2>
+    </header>
+    <ol class="steps" id="steps">
+      <span class="steps__line" aria-hidden="true"><i id="stepsFill"></i></span>
+      <li data-step><span class="num">01</span><div><h3>Orçamento</h3><p>Nossa equipe analisa com cuidado as suas necessidades energéticas.</p></div></li>
+      <li data-step><span class="num">02</span><div><h3>Projeto</h3><p>Técnicos visitam o local, definem o melhor ponto de instalação e desenvolvem um projeto personalizado.</p></div></li>
+      <li data-step><span class="num">03</span><div><h3>Crédito</h3><p>Primeira parcela em 180 dias, financiamento bancário em até 120 meses ou 48x no cartão.</p></div></li>
+      <li data-step><span class="num">04</span><div><h3>Instalação</h3><p>Equipe especializada realiza a instalação de forma ágil e segura.</p></div></li>
+      <li data-step><span class="num">05</span><div><h3>Homologação</h3><p>Apresentamos e acompanhamos todo o processo junto à concessionária da sua região.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="sec sec--dark" id="resultados">
+  <div class="wrap">
+    <header class="sec__head" data-reveal>
+      <p class="eyebrow">Cases de sucesso</p>
+      <h2>Contas de luz que despencaram</h2>
+      <p class="lead">Resultados reais de clientes da Sollagos. Você pode ser o próximo.</p>
+    </header>
+    <div class="cases" data-stagger>
+      <article class="case" data-before="5000" data-after="500">
+        <div class="case__top"><div><h3>Hotel Palace</h3><span>Saquarema · 88 módulos</span></div><strong class="case__pct"><b data-pct="90">0</b>%</strong></div>
+        <div class="bars"><div class="bar bar--b"><i></i><em>R$ 5.000</em><small>antes</small></div><div class="bar bar--a"><i></i><em>R$ 500</em><small>depois</small></div></div>
+      </article>
+      <article class="case" data-before="6000" data-after="600">
+        <div class="case__top"><div><h3>Condomínio Palazio</h3><span>Niterói · 104 módulos</span></div><strong class="case__pct"><b data-pct="90">0</b>%</strong></div>
+        <div class="bars"><div class="bar bar--b"><i></i><em>R$ 6.000</em><small>antes</small></div><div class="bar bar--a"><i></i><em>R$ 600</em><small>depois</small></div></div>
+      </article>
+      <article class="case" data-before="1911" data-after="230">
+        <div class="case__top"><div><h3>Valterlei</h3><span>Paty do Alferes · residência</span></div><strong class="case__pct"><b data-pct="87.9" data-dec="1">0</b>%</strong></div>
+        <div class="bars"><div class="bar bar--b"><i></i><em>R$ 1.911</em><small>antes</small></div><div class="bar bar--a"><i></i><em>R$ 230</em><small>depois</small></div></div>
+      </article>
+      <article class="case" data-before="500" data-after="140">
+        <div class="case__top"><div><h3>Antonio</h3><span>Paty do Alferes · residência</span></div><strong class="case__pct"><b data-pct="72">0</b>%</strong></div>
+        <div class="bars"><div class="bar bar--b"><i></i><em>R$ 500</em><small>antes</small></div><div class="bar bar--a"><i></i><em>R$ 140</em><small>depois</small></div></div>
+      </article>
+    </div>
+
+    <h3 class="sub" data-reveal>Quem escolheu a Sollagos recomenda</h3>
+    <div class="reviews" data-reveal>
+      <div class="reviews__track">
+        <img src="public/img/review-1.jpg" alt="Avaliação de cliente" loading="lazy">
+        <img src="public/img/review-2.jpg" alt="Avaliação de cliente" loading="lazy">
+        <img src="public/img/review-3.jpg" alt="Avaliação de cliente" loading="lazy">
+        <img src="public/img/review-4.jpg" alt="Avaliação de cliente" loading="lazy">
+        <img src="public/img/review-5.jpg" alt="Avaliação de cliente" loading="lazy">
+        <img src="public/img/review-6.jpg" alt="Avaliação de cliente" loading="lazy">
+        <img src="public/img/review-1.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img src="public/img/review-2.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img src="public/img/review-3.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img src="public/img/review-4.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img src="public/img/review-5.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img src="public/img/review-6.jpg" alt="" aria-hidden="true" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEOS -->
+<section class="sec">
+  <div class="wrap">
+    <header class="sec__head" data-reveal>
+      <p class="eyebrow eyebrow--dark">Bastidores</p>
+      <h2>Veja a Sollagos em ação</h2>
+    </header>
+    <div class="videos" data-stagger>
+      <figure class="vid vid--wide"><video playsinline preload="metadata" src="public/video/institucional.mp4#t=0.5"></video><button class="vid__play" aria-label="Reproduzir vídeo"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><figcaption>Conheça a Sollagos</figcaption></figure>
+      <figure class="vid"><video playsinline preload="metadata" src="public/video/instalacao.mp4#t=0.5"></video><button class="vid__play" aria-label="Reproduzir vídeo"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><figcaption>Mais sobre a Sollagos</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section class="sec sec--soft">
+  <div class="wrap">
+    <header class="sec__head" data-reveal>
+      <p class="eyebrow eyebrow--dark">Projetos executados</p>
+      <h2>Mais de 600 telhados gerando economia</h2>
+    </header>
+    <div class="gallery" data-stagger>
+      <img src="public/img/proj-1.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-2.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-3.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-4.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-5.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-6.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-7.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-8.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-9.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-10.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-11.jpg" alt="Projeto solar instalado" loading="lazy">
+      <img src="public/img/proj-12.jpg" alt="Projeto solar instalado" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sec" id="sobre">
+  <div class="wrap about">
+    <div data-reveal>
+      <p class="eyebrow eyebrow--dark">Conheça a Sollagos</p>
+      <h2>Energia sustentável para toda a Região dos Lagos</h2>
+      <p>A Sollagos é uma empresa familiar, referência na Região dos Lagos. Desenvolvemos soluções inovadoras e sustentáveis com total transparência, colocando o bem-estar dos clientes em primeiro lugar.</p>
+      <p>Nossa equipe reúne técnicos e engenheiros habilitados e registrados nos órgãos competentes, somando cerca de 30 anos de experiência no campo da elétrica.</p>
+      <a class="btn" href="#orcamento">Quero fazer um orçamento</a>
+    </div>
+    <div class="stats" data-stagger>
+      <div><b data-count="7">0</b>+<span>Anos de experiência</span></div>
+      <div><b data-count="600">0</b>+<span>Projetos homologados</span></div>
+      <div><b data-count="5000">0</b>+<span>Módulos instalados</span></div>
+      <div><b data-count="20">0</b>+<span>Cidades atendidas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec--soft" id="faq">
+  <div class="wrap wrap--narrow">
+    <header class="sec__head" data-reveal>
+      <p class="eyebrow eyebrow--dark">Perguntas frequentes</p>
+      <h2>Ficou com alguma dúvida?</h2>
+    </header>
+    <div class="faq" data-stagger>
+      <div class="qa"><button aria-expanded="false">Como funciona a energia solar?<i></i></button><div class="qa__a"><p>A energia solar aproveita a luz do sol para gerar eletricidade. O sistema fotovoltaico, instalado na sua residência ou empresa, é composto por painéis com células fotovoltaicas. Quando os raios solares incidem sobre elas, geram eletricidade pelo efeito fotovoltaico.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Depois de quanto tempo da instalação começo a economizar?<i></i></button><div class="qa__a"><p>Após a instalação, solicita-se a vistoria à concessionária — em projetos residenciais, geralmente agendada em até 7 dias. Com a aprovação, o sistema é ativado e, já no próximo ciclo de 30 dias, você percebe a economia na conta.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Placas solares: vale a pena investir?<i></i></button><div class="qa__a"><p>Sim. Em pouco tempo o sistema produz a quantidade de energia que você consome, e a conta passa a ser apenas o mínimo cobrado pela concessionária. As placas têm eficiência de 25 anos sem necessidade de reposição, além de serem limpas e sustentáveis.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Em dias sem sol as placas continuam produzindo?<i></i></button><div class="qa__a"><p>Sim. Mesmo em dias nublados o sistema produz, pois aproveita os raios que atravessam as nuvens. Em dias de chuva a produção é bem menor.</p></div></div>
+      <div class="qa"><button aria-expanded="false">Quando produzo mais do que consumo, como uso o excedente?<i></i></button><div class="qa__a"><p>Pela Lei 14.300/2022, o titular pode repassar os créditos para outras unidades consumidoras, desde que estejam no mesmo nome e na mesma concessionária, reduzindo as contas de cada uma delas.</p></div></div>
+      <div class="qa"><button aria-expanded="false">As placas precisam de manutenção?<i></i></button><div class="qa__a"><p>Muito pouca. Recomenda-se uma limpeza duas vezes ao ano, principalmente em locais com poucas chuvas, muita poeira ou fuligem.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="sun sun--cta" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap" data-reveal>
+    <h2>Não perca mais tempo. Comece a economizar com energia solar agora!</h2>
+    <a class="btn btn--light" href="#orcamento">Solicitar orçamento grátis</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <img src="public/img/logo.png" alt="Sollagos Energia Sustentável">
+  <p>Sollagos Energia Solar · Região dos Lagos, RJ</p>
+  <p><a href="mailto:contato@sollagos.com.br">contato@sollagos.com.br</a> · <a href="https://wa.me/5522997005965">WhatsApp (22) 99700-5965</a></p>
+</footer>
+
+<a class="wa" href="https://wa.me/5522997005965?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20energia%20solar." aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.200 2.200 1.300.3.2.4.1.6-.1l.8-.9c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.5.3.1.2.1.700-.1 1.300z"/></svg>
+</a>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
