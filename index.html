@@ -18,6 +18,7 @@
 <header class="nav" id="nav">
   <a class="nav__logo" href="#top" aria-label="Sollagos Energia Solar"><img src="public/img/logo.png" alt="Sollagos"></a>
   <nav class="nav__links" aria-label="Principal">
+    <a href="#simulador">Simulador</a>
     <a href="#servicos">Serviços</a>
     <a href="#como">Como funciona</a>
     <a href="#resultados">Resultados</a>
@@ -29,18 +30,20 @@
 
 <main id="top">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero__bg" data-parallax><img src="public/img/hero.jpg" alt=""></div>
+<!-- HERO 3D -->
+<section class="hero3d">
+ <div class="hero">
+  <div class="hero__bg"><img src="public/img/hero.jpg" alt=""></div>
+  <div class="hero__day"></div>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero__shade"></div>
-  <div class="sun" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap hero__grid">
     <div class="hero__copy">
       <p class="eyebrow" data-hero>Energia Solar · Região dos Lagos</p>
       <h1 data-split>Gere sua própria energia e <em>economize até 95%</em> na conta de luz.</h1>
       <p class="lead" data-hero>Uma solução completa e personalizada para sua casa, empresa ou fazenda — do projeto à homologação.</p>
       <div class="hero__cta" data-hero>
-        <a class="btn" href="#orcamento">Quero economizar</a>
+        <a class="btn" href="#simulador">Simular minha economia</a>
         <a class="btn btn--ghost" href="#resultados">Ver resultados reais</a>
       </div>
       <ul class="hero__proof" data-hero>
@@ -48,27 +51,14 @@
         <li><b data-count="5000">0</b>+ módulos instalados</li>
       </ul>
     </div>
-
-    <form class="card form" id="orcamento" data-hero-card novalidate>
-      <h2>Quanto você vai economizar?</h2>
-      <p>Preencha e receba uma simulação dos nossos especialistas.</p>
-      <label>Nome<input name="nome" autocomplete="name" placeholder="Seu nome completo" required></label>
-      <label>E-mail<input name="email" type="email" autocomplete="email" placeholder="seu@email.com" required></label>
-      <label>Telefone<input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required></label>
-      <label>Consumo médio mensal
-        <select name="consumo" required>
-          <option value="">Selecione</option>
-          <option>R$ 400 a R$ 600</option>
-          <option>R$ 600 a R$ 800</option>
-          <option>R$ 800 a R$ 1.000</option>
-          <option>Acima de R$ 1.000</option>
-        </select>
-      </label>
-      <button class="btn btn--block" type="submit">Enviar pelo WhatsApp</button>
-      <p class="form__msg" role="status" aria-live="polite"></p>
-    </form>
   </div>
-  <a class="scrollcue" href="#servicos" aria-label="Rolar"><span></span></a>
+  <div class="hud" aria-hidden="true">
+    <small>Conta de luz · exemplo</small>
+    <strong>R$ <b id="hudBill">800</b><em>−90%</em></strong>
+    <span id="hudPanels">0 de 18 placas</span>
+  </div>
+  <p class="scrollhint" aria-hidden="true">Role para instalar as placas ↓</p>
+ </div>
 </section>
 
 <!-- MARQUEE -->
@@ -78,6 +68,43 @@
     <span>Economia de até 95%</span><span>Primeira parcela em 180 dias</span><span>Financiamento em até 120x</span><span>Homologação inclusa</span><span>25 anos de vida útil</span>
   </div>
 </div>
+
+<!-- SIMULADOR -->
+<section class="sec sec--dark sim" id="simulador">
+  <div class="wrap sim__grid">
+    <div class="sim__stage" data-reveal>
+      <canvas id="simCanvas" aria-label="Casa 3D com placas solares"></canvas>
+      <span class="sim__hint">Arraste para girar</span>
+    </div>
+    <div class="sim__panel" data-reveal>
+      <p class="eyebrow">Simulador</p>
+      <h2>Quanto você gasta de luz por mês?</h2>
+      <div class="chips" role="radiogroup" aria-label="Consumo médio mensal">
+        <button class="chip" role="radio" aria-checked="true" data-mid="500" data-panels="7">R$ 400 a R$ 600</button>
+        <button class="chip" role="radio" aria-checked="false" data-mid="700" data-panels="10">R$ 600 a R$ 800</button>
+        <button class="chip" role="radio" aria-checked="false" data-mid="900" data-panels="13">R$ 800 a R$ 1.000</button>
+        <button class="chip" role="radio" aria-checked="false" data-mid="1200" data-panels="17">Acima de R$ 1.000</button>
+      </div>
+      <div class="sim__out" aria-live="polite">
+        <div><b id="simPanels">7</b><span>placas (aprox.)</span></div>
+        <div><b id="simKwh">455</b><span>kWh/mês gerados</span></div>
+        <div><b>R$ <i id="simSave">450</i></b><span>de economia por mês</span></div>
+      </div>
+      <p class="sim__note">Cerca de <b>R$ <span id="simYear">5.400</span> por ano</b>. Estimativa ilustrativa: o projeto real depende da visita técnica.</p>
+      <form class="card form" id="orcamento" novalidate>
+        <h3>Receba o projeto exato para o seu telhado</h3>
+        <input type="hidden" name="consumo" value="R$ 400 a R$ 600">
+        <label>Nome<input name="nome" autocomplete="name" placeholder="Seu nome completo" required></label>
+        <div class="form__row">
+          <label>E-mail<input name="email" type="email" autocomplete="email" placeholder="seu@email.com" required></label>
+          <label>Telefone<input name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required></label>
+        </div>
+        <button class="btn btn--block" type="submit">Enviar pelo WhatsApp</button>
+        <p class="form__msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
 
 <!-- SERVIÇOS -->
 <section class="sec" id="servicos">
@@ -292,5 +319,6 @@
 </a>
 
 <script type="module" src="main.js"></script>
+<script type="module" src="house.js"></script>
 </body>
 </html>

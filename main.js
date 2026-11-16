@@ -48,6 +48,28 @@ $$(".qa").forEach(qa => {
   }
 });
 
+// Simulador: faixa de consumo -> nº de placas e economia estimada
+// Regra provisória (validar com a Sollagos): placa de ~550 W gerando ~65 kWh/mês; economia de ~90% da conta.
+const KWH_PLACA = 65, ECONOMIA = 0.9;
+const simEls = { panels: $("#simPanels"), kwh: $("#simKwh"), save: $("#simSave"), year: $("#simYear") };
+const simVal = { panels: 7, kwh: 455, save: 450, year: 5400 };
+let simPanels = 7;
+function pickChip(chip, animated = true) {
+  $$(".chip").forEach(c => c.setAttribute("aria-checked", c === chip));
+  const panels = +chip.dataset.panels, mid = +chip.dataset.mid;
+  const to = { panels, kwh: panels * KWH_PLACA, save: Math.round(mid * ECONOMIA), year: Math.round(mid * ECONOMIA) * 12 };
+  simPanels = panels; window.__simPanels = panels;
+  $("[name=consumo]").value = chip.textContent.trim();
+  for (const k in to) {
+    const from = simVal[k]; simVal[k] = to[k];
+    if (animated && motionOn) animate(from, to[k], { duration: 0.7, ease: EASE, onUpdate: v => (simEls[k].textContent = fmt(Math.round(v))) });
+    else simEls[k].textContent = fmt(to[k]);
+  }
+  dispatchEvent(new CustomEvent("sim:change", { detail: { panels } }));
+}
+$$(".chip").forEach(c => c.addEventListener("click", () => pickChip(c)));
+window.__simPanels = simPanels;
+
 // Formulário -> WhatsApp
 const form = $(".form");
 form.addEventListener("submit", e => {
@@ -60,8 +82,8 @@ form.addEventListener("submit", e => {
     if (bad) { ok = false; f.classList.remove("is-error"); void f.offsetWidth; f.classList.add("is-error"); }
   });
   if (!ok) { msg.textContent = "Confira os campos destacados."; return; }
-  const d = Object.fromEntries(new FormData(form));
-  const text = `Olá! Quero um orçamento de energia solar.%0A%0A*Nome:* ${d.nome}%0A*E-mail:* ${d.email}%0A*Telefone:* ${d.tel}%0A*Consumo médio:* ${d.consumo}`;
+  const d = Object.fromEntries([...new FormData(form)].map(([k, v]) => [k, encodeURIComponent(v)]));
+  const text = `Olá! Quero um orçamento de energia solar.%0A%0A*Nome:* ${d.nome}%0A*E-mail:* ${d.email}%0A*Telefone:* ${d.tel}%0A*Consumo médio:* ${d.consumo}%0A*Simulação no site:* cerca de ${simPanels} placas`;
   msg.textContent = "Perfeito! Abrindo o WhatsApp…";
   if (motionOn) animate(msg, { opacity: [0, 1], y: [8, 0] }, { duration: 0.45, ease: EASE });
   open(`https://wa.me/${WA}?text=${text}`, "_blank", "noopener");
@@ -106,11 +128,8 @@ else {
   const words = $$(".word>span", h1);
   animate(words, { y: ["110%", "0%"] }, { duration: 0.9, delay: stagger(0.06, { startDelay: 0.15 }), ease: EASE });
   animate($$("[data-hero]"), { opacity: [0, 1], y: [22, 0] }, { duration: 0.7, delay: stagger(0.1, { startDelay: 0.5 }), ease: EASE });
-  animate($("[data-hero-card]"), { opacity: [0, 1], x: [48, 0], scale: [0.97, 1] }, { duration: 0.9, delay: 0.55, ease: EASE });
+  animate(".hud", { opacity: [0, 1], y: [24, 0] }, { duration: 0.8, delay: 1, ease: EASE });
 
-  // parallax do fundo (camada ambiente, move a 20-30% da velocidade do herói)
-  scroll(animate(".hero__bg", { y: ["0%", "14%"] }, { ease: "linear" }), { target: $(".hero"), offset: ["start start", "end start"] });
-  scroll(animate(".hero__copy", { y: [0, -50], opacity: [1, 0.2] }, { ease: "linear" }), { target: $(".hero"), offset: ["30% start", "end start"] });
   scroll(animate(".sun--cta", { rotate: [0, 40] }, { ease: "linear" }), { target: $(".cta"), offset: ["start end", "end start"] });
 
   // --- contadores ---------------------------------------------------------
